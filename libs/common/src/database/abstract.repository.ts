@@ -22,7 +22,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     options?: SaveOptions,
   ): Promise<TDocument> {
     const createdDocument = new this.model({
-      ...this.model,
+      ...document,
       _id: new Types.ObjectId(),
     });
     return (
