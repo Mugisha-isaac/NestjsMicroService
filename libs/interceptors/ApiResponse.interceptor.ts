@@ -8,7 +8,7 @@ import {
 import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable()
-export class CustomResponseInterceptor implements NestInterceptor {
+export class ApiResponse implements NestInterceptor {
   intercept(
     context: ExecutionContext,
     next: CallHandler<any>,
