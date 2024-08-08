@@ -13,4 +13,10 @@ export class OrdersService {
   async getOrders() {
     return this.orderRepository.find({});
   }
+
+  async getOrderById(id: string) {
+    return this.orderRepository.find({
+      _id: id,
+    });
+  }
 }

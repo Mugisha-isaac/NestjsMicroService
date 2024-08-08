@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpStatus,
+  NotFoundException,
+  Param,
+  Post,
+  Res,
+} from '@nestjs/common';
 import { OrdersService } from './orders.service';
 import { CreateOrderRequest } from './dto/create-order.request';
 
@@ -14,5 +23,10 @@ export class OrdersController {
   @Get()
   async getOrders() {
     return this.ordersService.getOrders();
+  }
+
+  @Get(':id')
+  async getOrderById(@Param('id') id: string) {
+    return this.ordersService.getOrderById(id);
   }
 }
