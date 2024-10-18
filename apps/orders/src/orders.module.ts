@@ -7,7 +7,7 @@ import { DatabaseModule } from '@app/common';
 import { OrderRepository } from './orders.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Order, OrderSChema } from './Schemas/order.schema';
-import { CacheModule } from '@nestjs/common';
+// import { CacheModule } from '@nestjs/common';
 
 @Module({
   imports: [
@@ -21,7 +21,7 @@ import { CacheModule } from '@nestjs/common';
     }),
     DatabaseModule,
     MongooseModule.forFeature([{ name: Order.name, schema: OrderSChema }]),
-    CacheModule.register(),
+    // CacheModule.register(),
   ],
   controllers: [OrdersController],
   providers: [OrdersService, OrderRepository],
